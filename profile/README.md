@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./images/drishti.jpeg" width="160" alt="DRISHT1 Logo"/>
+<img src="./images/drishti.jpeg" width="140" alt="DRISHT1 Logo"/>
 
 <h1>🛡️ DRISHT1</h1>
 
@@ -10,20 +10,20 @@
 
 <p>
 <strong>
-Connecting Telecom, Financial &amp; Social Intelligence to uncover hidden patterns,
+Connecting Telecom, Financial &amp; Social Intelligence to uncover hidden patterns,<br>
 detect anomalies, and generate explainable, actionable insights.
 </strong>
 </p>
 
 <br>
 
-<a href="#overview">Overview</a>
+<a href="#-about-drisht1">Overview</a>
 &nbsp;•&nbsp;
-<a href="#intelligence-architecture">Architecture</a>
+<a href="#-core-concept">Architecture</a>
 &nbsp;•&nbsp;
-<a href="#intelligence-domains">Intelligence Domains</a>
+<a href="#-what-drisht1-does">Intelligence Domains</a>
 &nbsp;•&nbsp;
-<a href="#cross-domain-entity-resolution">Entity Resolution</a>
+<a href="#-2-cross-domain-entity-resolution">Entity Resolution</a>
 
 <br><br>
 
@@ -32,6 +32,8 @@ detect anomalies, and generate explainable, actionable insights.
 <img src="https://img.shields.io/badge/Analytics-Cross--Domain-0F766E?style=for-the-badge"/>
 
 <img src="https://img.shields.io/badge/AI-Explainable-7C3AED?style=for-the-badge"/>
+
+<br>
 
 <img src="https://img.shields.io/badge/Focus-Threat%20Investigation-DC2626?style=for-the-badge"/>
 
