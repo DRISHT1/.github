@@ -806,16 +806,7 @@ flowchart TD
     F --> G[Training Dataset]
 ```
 
-### Training Examples
 
-The proposed dataset contains structured instruction pairs.
-
-```json
-{
-  "input": "<anomaly JSON + minimal context>",
-  "output": "<grounded investigative narrative>"
-}
-```
 
 ### Dataset Objectives
 
@@ -1280,61 +1271,71 @@ flowchart TD
 
 ---
 
-# 🖼️ Platform Screenshots
+# 🖼️ Application Screenshots
 
-The following screenshots provide a visual overview of the DRISHT1 investigation environment.
-
-<div align="center">
-
-<table>
-
-<tr>
-<td width="50%" align="center">
-
-### 🛡️ Investigation Dashboard
-
-<img src="../images/first.jpeg" width="95%" alt="DRISHT1 Investigation Dashboard">
-
-</td>
-
-<td width="50%" align="center">
-
-### 🔗 Entity Intelligence
-
-<img src="../images/second.jpeg" width="95%" alt="Entity Intelligence">
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" align="center">
-
-### 🕸️ Relationship Analysis
-
-<img src="../images/third.jpeg" width="95%" alt="Relationship Analysis">
-
-</td>
-
-<td width="50%" align="center">
-
-### 🤖 AI Intelligence
-
-<img src="../images/forth.jpeg" width="95%" alt="AI Intelligence">
-
-</td>
-</tr>
-
-</table>
+<p align="center">
+  Explore the key interfaces and capabilities of the DRISHT1 platform.
+</p>
 
 <br>
 
-### 📊 Analytics & Risk Intelligence
+## 📊 Intelligence Dashboard
 
-<img src="../images/five.jpeg" width="75%" alt="Analytics Dashboard">
+<p align="center">
+  <img src="./images/first.jpeg" alt="DRISHT1 Intelligence Dashboard" width="90%">
+</p>
 
-</div>
+<p align="center">
+  <i>Centralized intelligence overview and case analytics.</i>
+</p>
 
 ---
+
+## 🔍 Investigation & Entity Analysis
+
+<p align="center">
+  <img src="./images/second.jpeg" alt="Entity Investigation and Analysis" width="90%">
+</p>
+
+<p align="center">
+  <i>Analyze entities and investigate relationships across multiple data sources.</i>
+</p>
+
+---
+
+## 📞 Telecom & Activity Analysis
+
+<p align="center">
+  <img src="./images/third.jpeg" alt="Telecom and Activity Analysis" width="90%">
+</p>
+
+<p align="center">
+  <i>Explore communication patterns, activity timelines, and behavioral signals.</i>
+</p>
+
+---
+
+## 🤖 AI Intelligence Assistant
+
+<p align="center">
+  <img src="./images/forth.jpeg" alt="DRISHT1 AI Intelligence Assistant" width="90%">
+</p>
+
+<p align="center">
+  <i>Ask investigative questions and receive grounded, explainable insights.</i>
+</p>
+
+---
+
+## 🕸️ Graph & Relationship Intelligence
+
+<p align="center">
+  <img src="./images/fifth.jpeg" alt="Graph and Relationship Intelligence" width="90%">
+</p>
+
+<p align="center">
+  <i>Visualize cross-domain relationships and discover hidden connections.</i>
+</p>
 
 # 📌 Platform Summary
 
@@ -1669,7 +1670,7 @@ Potential areas of contribution include:
 <br>
 
 🐙 **GitHub Organization**  
-<a href="https://github.com/">View Project Organization</a>
+<a href="[https://github.com/](https://github.com/DRISHT1)">View Project Organization</a>
 
 <br>
 
