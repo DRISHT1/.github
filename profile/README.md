@@ -1,127 +1,224 @@
-# DRISHT1
+<div align="center">
 
-### Digital Risk & Intelligence System for Threat Investigation
+<img src="./images/logo.png" width="160" alt="DRISHT1 Logo"/>
 
-> **Connecting Telecom, Financial & Social Intelligence to Uncover Hidden Patterns, Detect Anomalies, and Generate Explainable, Actionable Insights.**
+<h1>🛡️ DRISHT1</h1>
+
+<p>
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=600&size=25&duration=3500&pause=1200&color=2563EB&center=true&vCenter=true&width=950&lines=Digital+Risk+%26+Intelligence+System;Cross-Domain+Threat+Investigation+Platform;From+Digital+Footprints+to+Explainable+Intelligence" alt="Typing SVG"/>
+</p>
+
+<p>
+<strong>
+Connecting Telecom, Financial & Social Intelligence to uncover hidden patterns,
+detect anomalies, and generate explainable, actionable insights.
+</strong>
+</p>
+
+<br>
+
+<a href="#overview">Overview</a>
+&nbsp;•&nbsp;
+<a href="#intelligence-architecture">Architecture</a>
+&nbsp;•&nbsp;
+<a href="#intelligence-domains">Intelligence Domains</a>
+&nbsp;•&nbsp;
+<a href="#cross-domain-entity-resolution">Entity Resolution</a>
+
+<br><br>
+
+<img src="https://img.shields.io/badge/Platform-Digital%20Intelligence-2563EB?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/Analytics-Cross--Domain-0F766E?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/AI-Explainable-7C3AED?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/Focus-Threat%20Investigation-DC2626?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/Architecture-Evidence%20Driven-F59E0B?style=for-the-badge"/>
+
+</div>
 
 ---
 
-## 🛡️ About DRISHT1
+# Overview
 
-**DRISHT1** is a unified, AI-powered digital intelligence and analytics platform designed to correlate multiple digital footprints into a single investigative view.
+**DRISHT1** is a unified digital intelligence and analytics platform designed to correlate multiple digital footprints into a single investigative view.
 
-The platform brings together:
+Instead of analyzing telecom records, financial transactions, and social-media activity independently, DRISHT1 focuses on the intelligence layer that connects them.
 
-- 📞 **Telecom CDR/IPDR Data**
-- 🏦 **Bank Statements & Financial Transactions**
-- 🌐 **Social Media Activity**
-- 🔗 **Cross-Domain Entity Resolution**
-- 🕸️ **Relationship & Graph Analysis**
-- 📊 **Behavioral & Temporal Analytics**
-- 🚨 **Anomaly & Risk Detection**
-- 🤖 **LLM-Based Explainable Intelligence**
+The platform is designed around a central investigative workflow:
 
-Instead of analyzing each source independently, DRISHT1 focuses on the harder problem: **entity resolution + cross-source correlation**. The goal is to connect a phone number, bank account identifier, and social handle to a unified digital identity and then analyze relationships, behavior, and anomalies across the resulting network.
+> **Ingest → Normalize → Resolve → Correlate → Analyze → Detect → Explain**
 
-The LLM is deliberately not responsible for deciding what is anomalous. Deterministic and statistical analytics identify the anomaly first; the LLM explains the evidence in grounded, investigator-readable language.
+By connecting identifiers, relationships, behavior, and temporal activity across multiple domains, DRISHT1 helps transform fragmented datasets into structured, evidence-based intelligence.
 
 ---
 
-## 🎯 Problem Statement
+## Intelligence at a Glance
 
-Investigators today often work with three siloed data sources when building a case or profile:
+<table>
+<tr>
 
-| Source | What it contains | Typical current practice |
+<td width="33%" align="center">
+
+### 📞 Telecom
+
+CDR & IPDR intelligence
+
+Communication patterns  
+Network activity  
+Location signals
+
+</td>
+
+<td width="33%" align="center">
+
+### 🏦 Financial
+
+Transaction intelligence
+
+Money movement  
+Counterparty analysis  
+Behavioral anomalies
+
+</td>
+
+<td width="33%" align="center">
+
+### 🌐 Social
+
+Activity intelligence
+
+Posts & interactions  
+Entity references  
+Behavioral signals
+
+</td>
+
+</tr>
+</table>
+
+<br>
+
+<table>
+<tr>
+
+<td width="33%" align="center">
+
+### 🔗 Resolve
+
+Cross-domain identity correlation and confidence-based entity linking.
+
+</td>
+
+<td width="33%" align="center">
+
+### 🕸️ Analyze
+
+Relationship networks, communities, indirect connections, and behavioral patterns.
+
+</td>
+
+<td width="33%" align="center">
+
+### 🚨 Explain
+
+Evidence-backed anomaly detection and investigator-readable intelligence.
+
+</td>
+
+</tr>
+</table>
+
+---
+
+# Problem Landscape
+
+Investigative analysis often involves multiple datasets that exist independently from one another.
+
+A case may involve communication records, financial transactions, and social activity, but the connections between these datasets are not always immediately visible.
+
+| Intelligence Source | Typical Data | Investigation Challenge |
 |---|---|---|
-| **Telecom CDR/IPDR** | Call logs, durations, tower IDs, IP session logs, data volume, ports | Manually reviewed in spreadsheets |
-| **Bank statements** | Transactions, counterparties, UPI/NEFT/RTGS, amounts, timestamps | Manually reconciled, PDF-based |
-| **Social media activity** | Posts, connections, sentiment, geo-tags, engagement | Rarely correlated with the other two |
+| **Telecom CDR / IPDR** | Calls, durations, towers, IP sessions, data activity | Large volumes and complex communication patterns |
+| **Financial Records** | Transactions, counterparties, amounts, timestamps | Difficult cross-reference and behavioral correlation |
+| **Social Activity** | Posts, connections, mentions, engagement, geo-tags | Often isolated from other investigative data |
 
-Telecom records, financial transactions, and social-media activity can individually provide useful information, but important relationships may only become visible when multiple sources are correlated.
+Individually, each source can provide useful signals.
 
-### DRISHT1 aims to address this challenge by providing:
+However, important relationships may only emerge when identifiers and activity are correlated across domains.
 
-> **A single analytics platform that ingests Telecom CDR/IPDR data, financial transactions, and user-provided social-media exports; resolves cross-domain entities; detects anomalies; analyzes relationships; and generates grounded, explainable intelligence for investigators.**
+### The core challenge
 
-The hard problem is not simply parsing three file formats. It is **building the identity-resolution and relationship layer that ties them together**, while ensuring anomalies remain explainable and traceable to evidence.
+> **The problem is not simply parsing multiple file formats. The harder problem is identifying entities, connecting relationships, detecting deviations, and preserving the evidence behind every investigative insight.**
 
 ---
 
-# 🧠 Core Concept
+# DRISHT1 Intelligence Approach
 
-DRISHT1 follows a **cross-domain intelligence approach**:
+DRISHT1 is built around five core stages.
 
-```text
-                    ┌──────────────────────┐
-                    │     TELECOM DATA     │
-                    │      CDR / IPDR      │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │                      │
-                    │       DRISHT1        │
-                    │                      │
-                    │ Digital Intelligence │
-                    │      Platform        │
-                    │                      │
-                    └──────────┬───────────┘
-                               ▲
-                               │
-              ┌────────────────┴────────────────┐
-              │                                 │
-     ┌────────┴─────────┐              ┌────────┴─────────┐
-     │  FINANCIAL DATA  │              │  SOCIAL MEDIA    │
-     │ Transactions /   │              │ Posts / Handles  │
-     │ Bank Statements  │              │ / Activity       │
-     └────────┬─────────┘              └────────┬─────────┘
-              │                                 │
-              └────────────────┬────────────────┘
-                               ▼
-                    ┌──────────────────────┐
-                    │ Entity Resolution &  │
-                    │ Cross-Source Linking │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │ Relationship / Graph │
-                    │      Analysis        │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │ Anomaly Detection &  │
-                    │ Pattern Discovery     │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │ Risk Scoring &       │
-                    │ Explainable Insights │
-                    └──────────────────────┘
+| Stage | Intelligence Function |
+|---|---|
+| **01 — Ingest** | Collect authorized telecom, financial, and social-media data |
+| **02 — Normalize** | Standardize identifiers, timestamps, locations, and records |
+| **03 — Resolve** | Connect cross-domain identifiers to potential real-world entities |
+| **04 — Analyze** | Build relationship networks and identify behavioral patterns |
+| **05 — Explain** | Generate evidence-backed insights from detected analytical signals |
+
+---
+
+# Intelligence Architecture
+
+The platform combines multiple intelligence domains into a unified analytical pipeline.
+
+```mermaid
+flowchart TD
+
+    A[📞 Telecom Intelligence<br/>CDR / IPDR]
+
+    B[🏦 Financial Intelligence<br/>Transactions & Records]
+
+    C[🌐 Social Intelligence<br/>User-Provided Activity]
+
+    A --> D[Data Ingestion & Normalization]
+    B --> D
+    C --> D
+
+    D --> E[Cross-Domain Entity Resolution]
+
+    E --> F[Relationship & Graph Intelligence]
+
+    F --> G[Behavioral & Temporal Analytics]
+
+    G --> H[Anomaly & Risk Detection]
+
+    H --> I[Evidence-Based Intelligence]
+
+    I --> J[Explainable Insights]
 ```
 
 ---
 
-# 🔍 What DRISHT1 Does
+# Intelligence Domains
 
-## 1. Multi-Source Data Analysis
+DRISHT1 processes structured and semi-structured information across multiple digital domains.
 
-DRISHT1 processes and normalizes structured and semi-structured data from multiple digital domains.
+## 📞 Telecom Intelligence
 
-### 📞 Telecom — CDR/IPDR
+Telecom records provide insight into communication behavior, network activity, and temporal patterns.
 
-**CDR fields**
+### CDR Signals
 
 - Caller number
 - Callee number
 - Timestamp
-- Duration
-- Cell tower ID
+- Call duration
+- Cell tower identifier
 - IMEI / IMSI
 
-**IPDR fields**
+### IPDR Signals
 
 - Source IP
 - Destination IP
@@ -131,70 +228,72 @@ DRISHT1 processes and normalizes structured and semi-structured data from multip
 - Data volume
 - NAT-mapped mobile number
 
-**Processing**
+### Processing Pipeline
 
-```text
-Parse
-  ↓
-Validate
-  ↓
-Normalize numbers to E.164
-  ↓
-Resolve tower ID to latitude/longitude
-  ↓
-Create relationship edges
+```mermaid
+flowchart LR
+
+    A[Raw CDR / IPDR] --> B[Parse]
+    B --> C[Validate]
+    C --> D[Normalize Identifiers]
+    D --> E[Resolve Network / Location Context]
+    E --> F[Create Relationship Edges]
+    F --> G[Telecom Intelligence Layer]
 ```
 
-**Potential anomaly signals**
+### Analytical Signals
 
-- Burst calling
-- Odd-hour activity
-- Tower-hopping inconsistent with claimed location
-- Contact with numbers already flagged elsewhere in a case
-- Sudden increase in IPDR data volume
-- Activity potentially consistent with file transfer or VPN tunneling
+| Signal Category | Examples |
+|---|---|
+| **Communication** | Burst calling, unusual contact frequency |
+| **Temporal** | Odd-hour activity, sudden behavioral changes |
+| **Location** | Tower movement patterns and location inconsistencies |
+| **Network** | Connections with entities already associated with a case |
+| **Data Activity** | Sudden increases in IPDR data volume |
 
 ---
 
-### 🏦 Financial Data
+## 🏦 Financial Intelligence
 
-**Fields**
+Financial records help identify money movement, counterparties, transaction behavior, and unusual patterns.
+
+### Core Data Signals
 
 - Transaction date
 - Amount
-- Debit / credit
-- Counterparty account/name
+- Debit / Credit
+- Counterparty account or name
 - Transaction mode
-- UPI / NEFT / RTGS / cash
+- UPI / NEFT / RTGS / Cash
 - Narration text
 
-**Processing**
+### Processing Pipeline
 
-```text
-PDF / CSV
-  ↓
-Table extraction
-  ↓
-Normalize transaction data
-  ↓
-Counterparty entity resolution
-  ↓
-Create financial relationship edges
+```mermaid
+flowchart LR
+
+    A[PDF / CSV Records] --> B[Table Extraction]
+    B --> C[Normalize Transactions]
+    C --> D[Resolve Counterparties]
+    D --> E[Create Financial Edges]
+    E --> F[Financial Intelligence Layer]
 ```
 
-**Potential anomaly signals**
+### Analytical Signals
 
-- Multiple transactions near a reporting threshold
+- Transactions near a reporting threshold
 - Round-number transfers
 - Sudden large inflows or outflows
-- High-frequency transfers to newly seen counterparties
-- Income vs. spend mismatch
+- High-frequency transfers to newly observed counterparties
+- Income and spending inconsistencies
 
 ---
 
-### 🌐 Social Media Activity
+## 🌐 Social Intelligence
 
-**Fields**
+Social intelligence is designed around **user-provided data exports**, enabling analysis without relying on unrestricted live scraping.
+
+### Available Signals
 
 - Post text
 - Timestamp
@@ -202,130 +301,273 @@ Create financial relationship edges
 - Mentioned handles
 - Geo-tags where available
 
-**Processing**
+### Processing Pipeline
 
-```text
-User-provided export
-  ↓
-NER for names / locations / organizations
-  ↓
-Sentiment scoring
-  ↓
-Entity linking
-  ↓
-Relationship analysis
+```mermaid
+flowchart LR
+
+    A[User-Provided Export] --> B[Entity Extraction]
+    B --> C[Sentiment Analysis]
+    C --> D[Entity Linking]
+    D --> E[Relationship Analysis]
+    E --> F[Social Intelligence Layer]
 ```
 
-Social processing is designed around **user-provided data exports rather than unrestricted live scraping**.
+### Analytical Signals
 
-**Potential anomaly signals**
-
-- Sudden change in posting behavior
-- Coordinated posting patterns
-- Sentiment spikes
-- Geo-tags inconsistent with other sources
+| Signal Category | Examples |
+|---|---|
+| **Behavioral** | Sudden changes in posting activity |
+| **Coordinated Activity** | Similar or synchronized posting patterns |
+| **Sentiment** | Significant sentiment changes or spikes |
+| **Location** | Geo-tags inconsistent with other available signals |
+| **Relationships** | Mentions and interactions involving relevant entities |
 
 ---
 
-## 2. Cross-Domain Entity Resolution
+# Cross-Domain Entity Resolution
 
-Entity resolution is one of the primary differentiators of DRISHT1.
+Entity resolution forms the central intelligence layer of DRISHT1.
 
-A single real-world entity may appear differently across multiple datasets:
+A single real-world entity may appear differently across telecom, financial, and social datasets.
 
-```text
-                  ┌───────────────┐
-                  │    ENTITY     │
-                  │    Person A   │
-                  └───────┬───────┘
-                          │
-             ┌────────────┼────────────┐
-             │            │            │
-             ▼            ▼            ▼
-       Phone Number   Bank Account   Social Handle
-             │            │            │
-             ▼            ▼            ▼
-            CDR        Transactions    Posts
+```mermaid
+flowchart TD
+
+    A[Potential Real-World Entity]
+
+    A --> B[📞 Phone Identifier]
+    A --> C[🏦 Financial Identifier]
+    A --> D[🌐 Social Handle]
+
+    B --> E[Telecom Records]
+    C --> F[Financial Records]
+    D --> G[Social Activity]
+
+    E --> H[Entity Resolution Engine]
+    F --> H
+    G --> H
+
+    H --> I[Confidence-Based Unified Entity]
 ```
 
-### Resolution Strategy
+The objective is not to blindly merge records.
 
-**1. Deterministic matching**
+Instead, DRISHT1 evaluates available evidence and relationships to determine whether identifiers may represent the same entity.
+
+### Resolution Principles
+
+> **Evidence before correlation. Confidence before consolidation. Every inferred relationship should remain traceable to its supporting signals.**
+
+---
+
+## What Comes Next
+
+The next section continues from this foundation and covers:
+
+- 🔗 Entity Resolution Strategy
+- 🕸️ Relationship & Graph Intelligence
+- 🚨 Two-Tier Anomaly Detection
+- 📦 Evidence-Based Anomaly Objects
+- 🤖 Qwen Intelligence Layer
+- 🧠 Fine-Tuning Strategy
+- 🔎 RAG & Case Intelligence
+  # Entity Resolution Strategy
+
+DRISHT1 uses a layered resolution strategy to connect identifiers across different intelligence domains without blindly merging records.
+
+The objective is to build **evidence-backed entity relationships** where every inferred connection can be reviewed and traced.
+
+```mermaid
+flowchart LR
+
+    A[Raw Identifiers]
+
+    A --> B[01 • Deterministic Matching]
+    B --> C[02 • Probabilistic Correlation]
+    C --> D[03 • Confidence Scoring]
+
+    D --> E{Confidence Evaluation}
+
+    E -->|High Confidence| F[Resolved Entity]
+    E -->|Requires Review| G[Investigator Review]
+    E -->|Insufficient Evidence| H[Keep Separate]
+```
+
+---
+
+## 01 — Deterministic Matching
+
+Direct identifier matches provide the strongest initial evidence for correlation.
+
+**Examples**
 
 - Exact phone numbers
 - Exact account identifiers where authorized
 - Known identifier relationships
 
-**2. Probabilistic matching**
+These matches are treated as explicit evidence rather than assumptions.
+
+---
+
+## 02 — Probabilistic Correlation
+
+When exact identifiers are unavailable, DRISHT1 evaluates multiple supporting signals to estimate the likelihood of a relationship.
+
+**Correlation signals**
 
 - Name similarity
 - Shared contacts
 - Temporal co-occurrence
 - Cross-source behavioral similarity
 
-**3. Confidence scoring**
-
-Every inferred relationship is surfaced with a confidence value. Entities are not silently merged without evidence.
-
-Every resolved entity becomes a node, while calls, transactions, and social links become relationship edges.
+Probabilistic correlation does not automatically mean two records represent the same entity. It contributes evidence to the overall resolution process.
 
 ---
 
-## 3. Relationship & Graph Intelligence
+## 03 — Confidence Scoring
 
-DRISHT1 models connected entities as a relationship network.
+Every inferred relationship is associated with a confidence value.
 
 ```text
-                     Entity B
-                        │
-                        │ CDR
-                        ▼
-Entity A ─────────── Entity C
-   │                    │
-   │ Transaction        │ Social
-   ▼                    ▼
-Account X            Entity D
-   │
-   ▼
-Account Y
+Evidence Signals
+      ↓
+Signal Weighting
+      ↓
+Confidence Score
+      ↓
+Relationship Decision
 ```
 
-The system can analyze:
+Entities are not silently merged without supporting evidence.
 
-- Communication relationships
-- Financial relationships
-- Social relationships
-- Indirect connections
-- High-degree entities
-- Communities / clusters
-- Shortest paths between entities
-- Network centrality
+> **DRISHT1 preserves the distinction between observed identifiers and inferred relationships, allowing investigators to review how and why a connection was established.**
 
-For the current project scale, the graph is represented through relational edges in **Supabase PostgreSQL**, while **NetworkX** is used for in-memory graph analysis.
-
-A separate Neo4j database is not required for the initial implementation.
+Once resolved, entities become nodes within the intelligence network, while communications, transactions, and social interactions become relationship edges.
 
 ---
 
-## 4. Anomaly Detection
+# Relationship & Graph Intelligence
 
-DRISHT1 uses two analytical tiers.
+DRISHT1 represents connected entities as a relationship network, making it possible to analyze interactions that may not be visible when records are viewed independently.
 
-### Tier 1 — Statistical / Rule-Based
+```mermaid
+flowchart LR
 
-Fast and explainable detection without requiring training data.
+    A[Entity A]
 
-- Z-score / IQR outlier detection
+    B[Entity B]
+
+    C[Entity C]
+
+    X[Account X]
+
+    Y[Account Y]
+
+    D[Entity D]
+
+    A -->|CDR| C
+    B -->|CDR| C
+
+    A -->|Transaction| X
+    X -->|Transfer| Y
+
+    C -->|Social Link| D
+
+    A -. Indirect Relationship .-> D
+```
+
+---
+
+## Network Intelligence Capabilities
+
+The relationship layer can analyze:
+
+| Analysis Area | Intelligence Capability |
+|---|---|
+| **Communication** | Call and interaction relationships |
+| **Financial** | Transaction and counterparty connections |
+| **Social** | Social interactions and linked entities |
+| **Indirect Connections** | Multi-hop relationships between entities |
+| **Network Importance** | High-degree and central entities |
+| **Communities** | Connected clusters and relationship groups |
+| **Path Analysis** | Shortest paths between relevant entities |
+
+---
+
+## Graph Analysis Approach
+
+For the current project scale, DRISHT1 represents relationships through structured edges stored within the platform's relational data layer.
+
+Graph computations are performed in memory for analytical operations such as:
+
+- Community detection
+- Centrality analysis
+- Shortest-path analysis
+- Relationship exploration
+
+This approach keeps the initial architecture focused while still supporting meaningful network intelligence.
+
+---
+
+# Anomaly Detection Engine
+
+DRISHT1 uses a two-tier analytical approach.
+
+The first tier focuses on **fast, deterministic, and explainable detection**, while the second tier identifies more complex behavioral and network deviations.
+
+```mermaid
+flowchart TD
+
+    A[Normalized Intelligence Data]
+
+    A --> B[Tier 1<br/>Statistical & Rule-Based]
+
+    A --> C[Tier 2<br/>ML & Graph-Based]
+
+    B --> D[Evidence Aggregation]
+    C --> D
+
+    D --> E[Anomaly Object]
+
+    E --> F[Severity & Confidence]
+
+    F --> G[Explainable Intelligence Layer]
+```
+
+---
+
+## Tier 1 — Statistical & Rule-Based Detection
+
+Tier 1 identifies unusual patterns without requiring a large training dataset.
+
+### Detection Techniques
+
+- Z-score analysis
+- IQR outlier detection
 - Transaction amount anomalies
 - Call-frequency anomalies
 - Data-volume anomalies
-- Odd-hour bursts
+- Odd-hour activity bursts
 - Structuring-like transaction patterns
-- Other threshold-based red flags
+- Threshold-based red flags
 
-### Tier 2 — ML / Graph-Based
+### Why Tier 1 Matters
 
-Machine-learning and graph features identify more complex deviations.
+| Advantage | Value |
+|---|---|
+| **Fast** | Suitable for rapid analytical screening |
+| **Explainable** | Detection triggers can be directly reviewed |
+| **Deterministic** | Results can be reproduced |
+| **Data Efficient** | Does not require extensive training data |
+
+---
+
+# Tier 2 — ML & Graph-Based Intelligence
+
+Tier 2 focuses on more complex deviations that may not be captured by fixed rules alone.
+
+### Analytical Techniques
 
 - Isolation Forest
 - Local Outlier Factor
@@ -334,27 +576,61 @@ Machine-learning and graph features identify more complex deviations.
 - Centrality analysis
 - Shortest-path analysis
 
-Example feature vector:
+### Example Analytical Feature Set
 
-```text
-Call Frequency
-Transaction Volatility
-Network Centrality
-Communication Volume
-Sentiment Volatility
-Temporal Activity
+```mermaid
+flowchart TD
+
+    A[Entity Activity]
+
+    A --> B[Communication Frequency]
+    A --> C[Transaction Volatility]
+    A --> D[Network Centrality]
+    A --> E[Communication Volume]
+    A --> F[Sentiment Volatility]
+    A --> G[Temporal Activity]
+
+    B --> H[Feature Vector]
+    C --> H
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+
+    H --> I[ML / Graph Analysis]
 ```
 
-### Evidence-Based Anomaly Object
+Tier 2 complements statistical detection rather than replacing it.
 
-Every anomaly raised by the engine should contain:
+> **Analytical complexity should not reduce explainability. Every high-level signal should remain connected to supporting evidence wherever possible.**
+
+---
+
+# Evidence-Based Anomaly Model
+
+Every anomaly identified by DRISHT1 is represented as a structured evidence object.
+
+This creates a clear boundary between:
+
+**Detection → Evidence → Explanation**
+
+```mermaid
+flowchart LR
+
+    A[Analytical Detection]
+    A --> B[Evidence Collection]
+    B --> C[Structured Anomaly Object]
+    C --> D[Human / AI Explanation]
+```
+
+### Core Anomaly Structure
 
 ```text
 Anomaly
 │
 ├── Entity
 ├── Type
-├── Tier
+├── Detection Tier
 ├── Severity
 ├── Raw Score
 ├── Confidence
@@ -363,24 +639,42 @@ Anomaly
 └── Timestamp
 ```
 
-The structured anomaly object is passed to the LLM. The LLM should **never invent anomalies from raw data**.
+The anomaly object acts as the source of truth for downstream explanation and investigation.
+
+> **The language model receives structured analytical evidence. It should not independently invent anomalies from raw data.**
 
 ---
 
-# 🤖 LLM Intelligence Layer
+# Explainable AI Intelligence Layer
 
-DRISHT1 uses **Qwen3.5-9B** as its language-model layer.
+DRISHT1 separates **analytical detection** from **language generation**.
 
-The model is responsible for:
+The analytical engine identifies signals.
 
-- Explaining detected anomalies
-- Generating investigative narratives
-- Answering free-text case questions through RAG
-- Converting structured analytical output into readable summaries
+The evidence layer structures those signals.
 
-### Critical Design Principle
+The language model transforms validated evidence into readable investigative intelligence.
 
-> **The LLM explains what the analytical engine already found; it does not determine what counts as an anomaly.**
+```mermaid
+flowchart LR
+
+    A[Raw Intelligence Data]
+    --> B[Analytics Engine]
+
+    B --> C[Detected Anomaly]
+
+    C --> D[Evidence Object]
+
+    D --> E[Chanakya / Qwen Intelligence Layer]
+
+    E --> F[Grounded Narrative]
+
+    F --> G[Investigator Review]
+```
+
+## Core Design Principle
+
+> **Analytics detects. Evidence supports. The language model explains. Humans decide.**
 
 This separation improves:
 
@@ -392,44 +686,129 @@ This separation improves:
 
 ---
 
-## Qwen Fine-Tuning Strategy
+# Qwen Intelligence Layer
 
-The fine-tuning approach is **last-layer / LoRA-on-final-block fine-tuning**.
+DRISHT1 uses **Qwen3.5-9B** as its language-model layer for grounded explanation and case intelligence.
 
-Full fine-tuning of a 9B model requires significant GPU memory and a sufficiently large dataset. DRISHT1 has a narrower objective, so the proposed strategy freezes most of the model and adapts only the final transformer block / LM head through LoRA.
+The model is designed to work with structured evidence and retrieved case context rather than independently determining what is anomalous.
 
-### Why this approach fits
+## Intelligence Capabilities
 
-- Smaller GPU / VRAM footprint
-- Lower risk of losing general capabilities
-- Faster iteration
-- Better fit for a narrow structured-to-narrative task
-
-### What the fine-tuned model should learn
-
-**1. Structured-to-narrative generation**
-
-Convert an anomaly JSON object into a concise investigative note in a consistent output style.
-
-**2. Free-text case Q&A**
-
-This is primarily a **RAG problem**, not a fine-tuning problem. Case documents and anomaly summaries are retrieved at query time and supplied as context to the base model.
+| Capability | Purpose |
+|---|---|
+| **Anomaly Explanation** | Convert detected anomalies into readable investigative notes |
+| **Investigative Narratives** | Summarize evidence and connected activity |
+| **Case Q&A** | Answer investigator questions using retrieved case context |
+| **Structured Summaries** | Convert analytical outputs into consistent reports |
 
 ---
 
-## Fine-Tuning Dataset
+## Structured Intelligence Workflow
 
-No public dataset exists for this exact task, so the training set will be created from generated or authorized data.
+```mermaid
+flowchart TD
 
-Proposed process:
+    A[Analytics Engine]
 
-- Generate real or synthetic anomaly objects from Tier 1 / Tier 2 detection
-- Hand-write approximately **150–300 examples** covering anomaly types
-- Format examples as instruction pairs
-- Augment through controlled paraphrasing
-- Human-review generated examples
+    A --> B[Anomaly Evidence]
 
-Example:
+    B --> C[Structured Context]
+
+    C --> D[Relevant Case Knowledge]
+
+    D --> E[Qwen Intelligence Layer]
+
+    E --> F[Grounded Response]
+
+    F --> G[Investigator]
+```
+
+The model's role is explanatory.
+
+> **It explains what the analytical system found instead of deciding what should be considered suspicious.**
+
+---
+
+# Model Adaptation Strategy
+
+DRISHT1 is designed around a targeted adaptation approach rather than full model retraining.
+
+The proposed strategy focuses on adapting the final transformer layers through **LoRA-based fine-tuning** for structured-to-narrative intelligence tasks.
+
+```mermaid
+flowchart LR
+
+    A[Base Language Model]
+
+    A --> B[Freeze General Knowledge]
+
+    B --> C[LoRA Adaptation]
+
+    C --> D[Structured Anomaly Input]
+
+    D --> E[Consistent Investigative Narrative]
+```
+
+## Why This Approach
+
+- Lower GPU and memory requirements
+- Faster experimentation
+- Reduced risk of degrading general model capabilities
+- Better fit for narrow structured-to-narrative tasks
+
+---
+
+## What the Adapted Model Learns
+
+### 01 — Structured-to-Narrative Generation
+
+Convert structured anomaly evidence into concise, grounded investigative summaries.
+
+```text
+Structured Evidence
+        ↓
+Context & Signals
+        ↓
+Language Model
+        ↓
+Investigative Narrative
+```
+
+### 02 — Free-Text Case Intelligence
+
+Case-specific question answering is primarily handled through **retrieval-augmented generation (RAG)**.
+
+Instead of embedding all case knowledge permanently into the model, relevant records and summaries are retrieved at query time.
+
+---
+
+# Fine-Tuning Dataset Strategy
+
+Because the task focuses on a specialized intelligence workflow, the training data is designed around generated or authorized analytical evidence.
+
+### Proposed Dataset Pipeline
+
+```mermaid
+flowchart TD
+
+    A[Authorized / Synthetic Data]
+
+    A --> B[Tier 1 & Tier 2 Detection]
+
+    B --> C[Generate Anomaly Objects]
+
+    C --> D[Human-Written Examples]
+
+    D --> E[Controlled Augmentation]
+
+    E --> F[Human Review]
+
+    F --> G[Training Dataset]
+```
+
+### Training Examples
+
+The proposed dataset contains structured instruction pairs.
 
 ```json
 {
@@ -438,649 +817,942 @@ Example:
 }
 ```
 
----
+### Dataset Objectives
 
-## Training Setup
-
-- **Framework:** Hugging Face `transformers` + `peft`
-- **LoRA:** targeting the final transformer block
-- **Suggested rank:** `r=8–16`
-- **LM head:** `modules_to_save` can be limited to the LM head where appropriate
-- **Hardware:** a single 24 GB GPU class machine such as RTX 3090/4090 or rented A10G/L4
-- **Evaluation:** hold out 15–20% of handwritten examples
-- **Evaluation criteria:** factual grounding + fluency, not loss alone
+- Cover different anomaly categories
+- Maintain consistent narrative structure
+- Preserve evidence references
+- Avoid unsupported conclusions
+- Support human review and evaluation
 
 ---
 
-# 🔎 RAG & Case Intelligence
+# Training Configuration
 
-DRISHT1 uses PostgreSQL with **pgvector** so structured case data and embeddings can remain in the same managed database.
+| Component | Proposed Approach |
+|---|---|
+| **Base Model** | Qwen3.5-9B |
+| **Framework** | Hugging Face Transformers + PEFT |
+| **Adaptation** | LoRA-based fine-tuning |
+| **Target Scope** | Final transformer layers / selected modules |
+| **Suggested LoRA Rank** | `r = 8–16` |
+| **Training Data** | Generated or authorized anomaly examples |
+| **Validation Split** | Approximately 15–20% |
+| **Evaluation Focus** | Grounding, factual consistency, and fluency |
 
-```text
-Case Data
-   ↓
-Chunk / Normalize
-   ↓
-Generate Embeddings
-   ↓
-Supabase pgvector
-   ↓
-Similarity Retrieval
-   ↓
-Relevant Case Context
-   ↓
-Qwen
-   ↓
-Grounded Answer
-```
+The primary evaluation objective is not loss alone.
 
-Example questions:
+A useful investigative model must also be evaluated for:
 
-```text
-Which entities are connected to Entity A?
-
-Show unusual financial activity around Entity B.
-
-Are there communication and transaction relationships
-between these two entities?
-
-Summarize the strongest anomalies in this case.
-```
+- Factual grounding
+- Evidence consistency
+- Unsupported claim avoidance
+- Clarity
+- Narrative quality
 
 ---
 
-# 🏗️ High-Level Architecture
+# RAG & Case Intelligence
 
-```text
-┌─────────────────────────────────────────────────────────────┐
-│                     NEXT.JS FRONTEND                       │
-│                                                             │
-│ Dashboard | Entity Explorer | Network Graph | Timeline      │
-│ Alerts | Case Management | Investigation Chat              │
-└──────────────────────────────┬──────────────────────────────┘
-                               │
-                         REST / WebSocket
-                               │
-┌──────────────────────────────▼──────────────────────────────┐
-│                 DJANGO + DRF API LAYER                     │
-│                                                             │
-│ Supabase JWT Verification | Case Management | Uploads      │
-│ Entity APIs | Analytics APIs | Insight APIs                │
-└──────────────┬──────────────┬───────────────┬───────────────┘
-               │              │               │
-        ┌──────▼─────┐ ┌──────▼────────┐ ┌────▼─────────────┐
-        │ INGESTION  │ │  ANALYTICS &  │ │  LLM INFERENCE   │
-        │   + ETL    │ │    ANOMALY    │ │     SERVICE      │
-        │            │ │    ENGINE     │ │                  │
-        │   Celery   │ │ scikit-learn  │ │ Qwen3.5-9B       │
-        │   Workers  │ │ NetworkX      │ │ vLLM / Ollama    │
-        └──────┬─────┘ └──────┬────────┘ └────────┬─────────┘
-               │               │                   │
-               └───────────────┼───────────────────┘
-                               │
-                ┌──────────────▼────────────────┐
-                │            SUPABASE            │
-                │                                │
-                │ PostgreSQL                     │
-                │ + pgvector                     │
-                │ + Storage                      │
-                │                                │
-                │ Entities                       │
-                │ CDR / IPDR                     │
-                │ Transactions                   │
-                │ Social Posts                   │
-                │ Relationships                  │
-                │ Anomalies                      │
-                │ Cases                          │
-                │ Embeddings                     │
-                └──────────────┬─────────────────┘
-                               │
-                        ┌──────▼──────┐
-                        │    Redis    │
-                        │ Celery      │
-                        │ Broker/Cache│
-                        └─────────────┘
-```
+DRISHT1 uses retrieval-based intelligence to answer case-specific questions using relevant context.
 
-### Why this architecture?
+Structured case records, anomaly summaries, and other authorized investigative context can be indexed for semantic retrieval.
 
-The anomaly engine and LLM inference service are deliberately separated from Django.
+```mermaid
+flowchart TD
 
-- Anomaly detection remains deterministic/statistical and does not depend on the LLM being available.
-- The LLM is used to explain already-detected anomalies and answer grounded case questions.
-- The LLM can be fine-tuned or redeployed independently.
-- Investigators can trace generated insights back to the originating analytical trigger.
+    A[Case Data]
 
----
+    A --> B[Chunk & Normalize]
 
-# 🧩 Technology Stack
+    B --> C[Generate Embeddings]
 
-## Backend
+    C --> D[Vector Index]
 
-- **Django 5.x + Django REST Framework**
-  - API and compute layer
-  - File-parsing orchestration
-  - Entity resolution
-  - Anomaly detection orchestration
-  - LLM orchestration
-  - Case/entity models
+    D --> E[Similarity Retrieval]
 
-- **Celery + Redis**
-  - Async processing for file parsing
-  - Anomaly-analysis jobs
-  - LLM inference jobs
+    E --> F[Relevant Case Context]
 
-- **Django Channels** *(optional)*
-  - Live progress updates
-  - Streaming LLM responses over WebSocket
+    F --> G[Qwen Intelligence Layer]
 
----
-
-## Database & Storage
-
-### Supabase PostgreSQL
-
-Supabase provides the managed PostgreSQL foundation for DRISHT1.
-
-It provides:
-
-- Structured relational data
-- `pgvector` for embeddings
-- Storage for raw uploaded files
-- Web dashboard for inspecting data
-
-This replaces the need to self-manage separate infrastructure for:
-
-- PostgreSQL
-- Vector database
-- S3 / MinIO-style raw-file storage
-
-Django connects to Supabase exactly like a normal PostgreSQL database using the Supabase connection string.
-
----
-
-## Authentication
-
-DRISHT1 uses **Supabase Auth** as the authentication provider, while Django handles request-level authorization.
-
-```text
-Next.js
-   ↓
-Supabase Auth
-   ↓
-Supabase JWT
-   ↓
-Django JWT Verification
-   ↓
-Django Authorization / RBAC
-```
-
-Users can authenticate through:
-
-- Email/password
-- Magic link
-- OAuth
-
-Django does not issue competing auth tokens. It verifies the incoming Supabase JWT and maps it to the required Django user/role for permission checks.
-
----
-
-## Graph Storage Strategy
-
-A separate graph database is intentionally avoided in the initial architecture.
-
-The current relationship graph consists mainly of:
-
-- Entities
-- CDR relationships
-- Transaction relationships
-- Social relationships
-
-These can be represented using PostgreSQL relational edges, recursive CTEs, and adjacency-list queries.
-
-For analytical graph operations, DRISHT1 loads the required edges into **NetworkX** at analysis time.
-
-PostgreSQL remains the source of truth.
-
----
-
-## Frontend
-
-- **Next.js 15 (App Router)**
-- **TypeScript**
-- **TailwindCSS**
-- **shadcn/ui**
-- **react-force-graph / Cytoscape.js**
-- **Recharts / D3.js**
-- **TanStack Query**
-
-### Core frontend views
-
-- Case Dashboard
-- Entity Explorer
-- Network Graph
-- Timeline
-- Alerts
-- Investigation Chat
-
----
-
-## ML / Data Processing
-
-- **Python**
-- **Pandas**
-- **NumPy**
-- **scikit-learn**
-- **NetworkX**
-- **pdfplumber**
-- **camelot-py**
-- **spaCy**
-- **Hugging Face Transformers**
-- **PEFT**
-
----
-
-## LLM
-
-- **Qwen3.5-9B**
-- **LoRA / final-block fine-tuning**
-- **vLLM**
-- **Ollama**
-
-The proposed Qwen model is intended to be self-hosted behind an internal-only service rather than exposed directly to the frontend.
-
----
-
-# 🗄️ Suggested Database Schema
-
-The core data model is built around a canonical entity and its identifiers.
-
-```text
-Entity (id, canonical_name, confidence_score, created_at)
-  ├── PhoneIdentifier (entity_id, number, first_seen, last_seen)
-  ├── BankIdentifier (entity_id, account_number_hash, bank_name)
-  └── SocialIdentifier (entity_id, platform, handle)
-
-CDRRecord
-(id, caller_entity_id, callee_entity_id, timestamp, duration, tower_id)
-
-IPDRRecord
-(id, entity_id, src_ip, dst_ip, port, timestamp, data_volume)
-
-Transaction
-(id, from_entity_id, to_entity_id, amount, mode, timestamp, narration)
-
-SocialPost
-(id, entity_id, platform, text, timestamp, sentiment_score, geo_tag)
-
-Anomaly
-(id, entity_id, type, tier, severity, evidence_refs[], raw_score, created_at)
-
-Insight
-(id, anomaly_id, narrative_text, generated_by_model, reviewed_by_human)
-
-Case
-(id, name, investigator_id, entities[], status)
-```
-
-### Relationship Representation
-
-```text
-Entity A ──CDR────────────► Entity B
-Entity A ──Transaction────► Account C
-Entity A ──Social─────────► Entity D
+    G --> H[Grounded Answer]
 ```
 
 ---
 
-# 🔄 Complete Intelligence Pipeline
+## Case Intelligence Queries
+
+Examples of supported investigative questions include:
+
+> **Which entities are connected to Entity A?**
+
+> **Show unusual financial activity associated with Entity B.**
+
+> **Are there communication and transaction relationships between these entities?**
+
+> **Summarize the strongest analytical signals in this case.**
+
+---
+
+## Intelligence Boundary
+
+DRISHT1 follows a strict intelligence boundary:
 
 ```text
-               DATA INGESTION
-                     │
-                     ▼
-        DATA CLEANING & NORMALIZATION
-                     │
-                     ▼
-              ENTITY RESOLUTION
-                     │
-                     ▼
-          CROSS-SOURCE CORRELATION
-                     │
-                     ▼
-          RELATIONSHIP / GRAPH DATA
-                     │
-                     ▼
-             FEATURE ENGINEERING
-                     │
-                     ▼
-          ┌──────────┴──────────┐
-          │                     │
-          ▼                     ▼
-       TIER 1                 TIER 2
-     Statistical               ML
-       Rules                Algorithms
-          │                     │
-          └──────────┬──────────┘
-                     ▼
-             ANOMALY OBJECT
-                     │
-                     ▼
-              EVIDENCE LAYER
-                     │
-                     ▼
-              RAG RETRIEVAL
-                     │
-                     ▼
-                 QWEN LLM
-                     │
-                     ▼
-          EXPLAINABLE INSIGHT
-                     │
-                     ▼
-             INVESTIGATOR UI
+Data
+ ↓
+Analytics
+ ↓
+Evidence
+ ↓
+Retrieval
+ ↓
+Language Model
+ ↓
+Explanation
+ ↓
+Human Review
+```
+
+This architecture is designed to ensure that AI-generated output remains grounded in available evidence and supports investigator decision-making rather than replacing it.
+
+---
+# 🏗️ Platform Architecture
+
+DRISHT1 is designed as a layered intelligence platform where data ingestion, analytical processing, relationship intelligence, and AI-assisted explanation work as connected stages.
+
+```mermaid
+flowchart TD
+
+    A[Authorized Data Sources]
+
+    A --> B[Data Ingestion Layer]
+
+    B --> C[Validation & Normalization]
+
+    C --> D[Entity Resolution Layer]
+
+    D --> E[Relationship Intelligence]
+
+    E --> F[Analytics & Detection Engine]
+
+    F --> G[Evidence & Risk Layer]
+
+    G --> H[AI-Assisted Intelligence]
+
+    H --> I[Investigation Workspace]
+
+    I --> J[Human Review & Decision]
+```
+
+## Platform Layers
+
+| Layer | Responsibility |
+|---|---|
+| **Data Ingestion** | Receive and process authorized datasets |
+| **Normalization** | Standardize identifiers, timestamps, formats, and records |
+| **Entity Resolution** | Identify evidence-based cross-domain relationships |
+| **Relationship Intelligence** | Build and analyze entity connections |
+| **Analytics Engine** | Detect statistical, behavioral, and graph-based anomalies |
+| **Evidence Layer** | Preserve triggers, scores, confidence, and supporting records |
+| **AI Intelligence** | Generate grounded explanations and investigative summaries |
+| **Investigation Workspace** | Present insights, relationships, and analytical findings |
+| **Human Review** | Support investigator verification and decision-making |
+
+---
+
+# 🔄 Investigation Workflow
+
+DRISHT1 transforms raw digital records into structured investigative intelligence through a controlled analytical workflow.
+
+```mermaid
+flowchart TD
+
+    A[Create Investigation]
+
+    A --> B[Upload Authorized Data]
+
+    B --> C[Validate & Process Records]
+
+    C --> D[Normalize Data]
+
+    D --> E[Resolve Entities]
+
+    E --> F[Build Relationship Network]
+
+    F --> G[Run Analytical Detection]
+
+    G --> H{Anomaly Detected?}
+
+    H -->|Yes| I[Collect Supporting Evidence]
+    H -->|No| J[Continue Pattern Analysis]
+
+    I --> K[Assign Severity & Confidence]
+
+    K --> L[Generate Explainable Insight]
+
+    J --> M[Update Investigation Graph]
+
+    L --> M
+
+    M --> N[Investigator Review]
+
+    N --> O[Investigation Summary]
+```
+
+### Investigation Lifecycle
+
+```text
+CASE
+ │
+ ├── Data Collection
+ │
+ ├── Data Validation
+ │
+ ├── Normalization
+ │
+ ├── Entity Resolution
+ │
+ ├── Relationship Mapping
+ │
+ ├── Pattern Analysis
+ │
+ ├── Anomaly Detection
+ │
+ ├── Evidence Collection
+ │
+ ├── AI-Assisted Explanation
+ │
+ └── Human Review
+```
+
+> **DRISHT1 is designed to support investigation workflows by organizing and correlating available evidence. Analytical outputs remain available for human review and verification.**
+
+---
+
+# 🧩 Core Platform Capabilities
+
+DRISHT1 combines multiple intelligence functions into a unified investigative environment.
+
+<table>
+<tr>
+
+<td width="33%" align="center">
+
+### 📥 Data Intelligence
+
+Multi-source ingestion
+
+Telecom records  
+Financial transactions  
+Social activity  
+Structured datasets
+
+</td>
+
+<td width="33%" align="center">
+
+### 🔗 Entity Intelligence
+
+Cross-domain correlation
+
+Identifier matching  
+Confidence scoring  
+Relationship evidence  
+Entity profiles
+
+</td>
+
+<td width="33%" align="center">
+
+### 🕸️ Network Intelligence
+
+Relationship analysis
+
+Graph exploration  
+Communities  
+Central entities  
+Indirect connections
+
+</td>
+
+</tr>
+
+<tr>
+
+<td width="33%" align="center">
+
+### 🚨 Risk Intelligence
+
+Anomaly detection
+
+Behavioral signals  
+Temporal patterns  
+Statistical analysis  
+Risk indicators
+
+</td>
+
+<td width="33%" align="center">
+
+### 🤖 Explainable AI
+
+Evidence-backed intelligence
+
+Narrative generation  
+Case Q&A  
+Context retrieval  
+Analytical summaries
+
+</td>
+
+<td width="33%" align="center">
+
+### 📊 Investigation Workspace
+
+Unified case analysis
+
+Entity profiles  
+Relationship views  
+Evidence tracking  
+Investigation summaries
+
+</td>
+
+</tr>
+</table>
+
+---
+
+# 🎯 Intelligence Workflow
+
+The core intelligence process follows a clear evidence-driven pipeline.
+
+```mermaid
+flowchart LR
+
+    A[📥 Ingest]
+
+    A --> B[🧹 Normalize]
+
+    B --> C[🔗 Resolve]
+
+    C --> D[🕸️ Connect]
+
+    D --> E[📊 Analyze]
+
+    E --> F[🚨 Detect]
+
+    F --> G[📦 Evidence]
+
+    G --> H[🤖 Explain]
+
+    H --> I[👤 Review]
+```
+
+| Stage | Outcome |
+|---|---|
+| **Ingest** | Authorized records enter the investigation |
+| **Normalize** | Data is standardized into consistent formats |
+| **Resolve** | Cross-domain identifiers are correlated |
+| **Connect** | Relationships become a structured intelligence network |
+| **Analyze** | Behavioral, temporal, and network patterns are evaluated |
+| **Detect** | Analytical deviations and anomaly signals are identified |
+| **Evidence** | Supporting records and triggers are preserved |
+| **Explain** | Evidence is transformed into readable intelligence |
+| **Review** | Human investigators validate and act on findings |
+
+---
+
+# 📊 Intelligence & Risk Dashboard
+
+The investigation dashboard is designed to provide a high-level view of the active case.
+
+### Dashboard Intelligence
+
+- Active investigations
+- Entities under analysis
+- Relationship activity
+- Detected anomaly signals
+- Risk distribution
+- Temporal activity
+- Cross-domain connections
+- Evidence-backed alerts
+
+```mermaid
+flowchart LR
+
+    A[Case Data]
+
+    A --> B[Entity Activity]
+
+    A --> C[Relationship Activity]
+
+    A --> D[Financial Signals]
+
+    A --> E[Telecom Signals]
+
+    A --> F[Social Signals]
+
+    B --> G[Investigation Dashboard]
+    C --> G
+    D --> G
+    E --> G
+    F --> G
 ```
 
 ---
 
-# 📊 Potential Intelligence Views
+# 🔐 Security & Investigation Controls
 
-## Entity Profile
+Because DRISHT1 processes sensitive investigative data, security and controlled access are important parts of the platform design.
 
-```text
-┌────────────────────────────────────────┐
-│             ENTITY PROFILE             │
-├────────────────────────────────────────┤
-│ Entity ID:        E102                 │
-│ Confidence:       0.94                 │
-│                                        │
-│ Telecom Links:    24                   │
-│ Financial Links:  8                    │
-│ Social Links:     13                   │
-│                                        │
-│ Anomalies:        5                    │
-│ Relationships:    37                   │
-└────────────────────────────────────────┘
+## Security Principles
+
+| Control Area | Purpose |
+|---|---|
+| **Authentication** | Verify authorized platform access |
+| **Role-Based Access** | Restrict capabilities according to user responsibility |
+| **Case Isolation** | Keep investigation data logically separated |
+| **Data Validation** | Reduce malformed or inconsistent input |
+| **Audit Logging** | Preserve activity history where implemented |
+| **Evidence Traceability** | Maintain links between insights and source evidence |
+| **Controlled AI Context** | Limit AI responses to supplied analytical and retrieved context |
+
+### Security Workflow
+
+```mermaid
+flowchart TD
+
+    A[User Access]
+
+    A --> B[Authentication]
+
+    B --> C{Authorized?}
+
+    C -->|No| D[Access Denied]
+
+    C -->|Yes| E[Role & Permission Check]
+
+    E --> F[Investigation Access]
+
+    F --> G[Authorized Platform Functions]
+
+    G --> H[Audit / Activity Record]
 ```
 
 ---
 
-## Relationship Graph
+# ☁️ Operational Architecture
 
-```text
-                  ┌───────────┐
-                  │ Entity B  │
-                  └─────┬─────┘
-                        │
-                        │ CDR
-                        │
-┌───────────┐      ┌────▼─────┐      ┌───────────┐
-│ Account A │──────│ Entity A │──────│ Entity C  │
-└───────────┘      └────┬─────┘      └───────────┘
-                        │
-                    Social Link
-                        │
-                        ▼
-                  ┌───────────┐
-                  │ Entity D  │
-                  └───────────┘
+DRISHT1 is structured as an intelligence platform with clear separation between users, application services, analytical processing, AI intelligence, and data management.
+
+```mermaid
+flowchart TD
+
+    A[Investigators & Authorized Users]
+
+    A --> B[Secure Investigation Workspace]
+
+    B --> C[Identity & Access Control]
+
+    C --> D[Core Intelligence Services]
+
+    D --> E[Data Processing]
+
+    D --> F[Entity & Relationship Analysis]
+
+    D --> G[Anomaly & Risk Analytics]
+
+    D --> H[AI Intelligence Layer]
+
+    E --> I[Secure Case Data]
+
+    F --> I
+    G --> I
+
+    H --> J[Grounded Intelligence Output]
+
+    J --> B
 ```
 
----
-
-## Risk & Anomaly Dashboard
-
-The platform can surface:
-
-- Severity
-- Confidence
-- Triggering evidence
-- Related entities
-- Timeline
-- Source records
-- Cross-domain correlations
-- Communication anomalies
-- Financial anomalies
-- Relationship anomalies
+> The operational view intentionally focuses on platform responsibilities rather than exposing implementation-specific infrastructure details.
 
 ---
 
-## Investigator Timeline
+# 🖼️ Platform Screenshots
 
-A unified timeline can combine:
+The following screenshots provide a visual overview of the DRISHT1 investigation environment.
 
-```text
-CDR Events
-    +
-IPDR Events
-    +
-Financial Transactions
-    +
-Social Activity
-    +
-Detected Anomalies
+<div align="center">
+
+<table>
+
+<tr>
+<td width="50%" align="center">
+
+### 🛡️ Investigation Dashboard
+
+<img src="../images/first.jpeg" width="95%" alt="DRISHT1 Investigation Dashboard">
+
+</td>
+
+<td width="50%" align="center">
+
+### 🔗 Entity Intelligence
+
+<img src="../images/second.jpeg" width="95%" alt="Entity Intelligence">
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" align="center">
+
+### 🕸️ Relationship Analysis
+
+<img src="../images/third.jpeg" width="95%" alt="Relationship Analysis">
+
+</td>
+
+<td width="50%" align="center">
+
+### 🤖 AI Intelligence
+
+<img src="../images/forth.jpeg" width="95%" alt="AI Intelligence">
+
+</td>
+</tr>
+
+</table>
+
+<br>
+
+### 📊 Analytics & Risk Intelligence
+
+<img src="../images/five.jpeg" width="75%" alt="Analytics Dashboard">
+
+</div>
+
+---
+
+# 📌 Platform Summary
+
+DRISHT1 brings together multiple stages of digital investigation into a single intelligence workflow.
+
+```mermaid
+flowchart LR
+
+    A[Digital Data]
+    --> B[Unified Intelligence]
+
+    B --> C[Entity Resolution]
+
+    C --> D[Relationship Analysis]
+
+    D --> E[Anomaly Detection]
+
+    E --> F[Evidence]
+
+    F --> G[Explainable Intelligence]
+
+    G --> H[Human Decision]
 ```
 
-This enables investigators to examine changes in behavior over time and correlate events that would otherwise appear disconnected.
+### Core Principle
+
+> **DRISHT1 does not treat AI-generated text as the source of investigative truth. Analytical findings, evidence references, and human review remain central to the intelligence workflow.**
+
+---
+# ⚡ Performance Goals
+
+DRISHT1 is designed with a focus on responsive investigation workflows, scalable analytical processing, and efficient handling of structured intelligence data.
+
+| Area | Target |
+|---|---|
+| **Dashboard Experience** | Responsive interactive interface |
+| **Standard API Operations** | Optimized for low-latency responses |
+| **Data Processing** | Asynchronous processing for larger datasets |
+| **Investigation Queries** | Efficient filtered and indexed retrieval |
+| **Analytics** | Scalable statistical and graph analysis |
+| **AI Responses** | Grounded in supplied evidence and retrieved context |
+| **Architecture** | Designed for modular expansion |
+
+> Performance characteristics may vary depending on dataset size, analytical complexity, infrastructure, and model deployment configuration.
 
 ---
 
-# 🚨 Responsible Intelligence
+# 🧩 Capability Matrix
 
-DRISHT1 is intended as an **investigative decision-support system**, not an autonomous decision-maker.
+| Intelligence Area | Capability |
+|---|:---:|
+| Multi-Source Data Ingestion | ✅ |
+| Telecom CDR Analysis | ✅ |
+| IPDR Analysis | ✅ |
+| Financial Transaction Analysis | ✅ |
+| User-Provided Social Data Analysis | ✅ |
+| Data Normalization | ✅ |
+| Cross-Domain Entity Resolution | ✅ |
+| Confidence-Based Relationships | ✅ |
+| Relationship Mapping | ✅ |
+| Graph Analysis | ✅ |
+| Community Detection | ✅ |
+| Centrality Analysis | ✅ |
+| Temporal Pattern Analysis | ✅ |
+| Statistical Anomaly Detection | ✅ |
+| ML-Based Anomaly Analysis | ✅ |
+| Evidence-Based Anomaly Objects | ✅ |
+| Risk & Severity Assessment | ✅ |
+| Explainable AI Narratives | ✅ |
+| Case Intelligence Q&A | ✅ |
+| Retrieval-Augmented Generation | ✅ |
+| Investigation Dashboard | ✅ |
+| Role-Based Access | ⚙️ |
+| Audit & Activity Tracking | ⚙️ |
 
-The platform is designed with an emphasis on:
-
-- 🔐 Authorized data access
-- 🔒 Data privacy
-- ⚖️ Responsible AI
-- 🧠 Explainable analytics
-- 👤 Human-in-the-loop investigation
-- 📋 Auditability
-- 🎯 Evidence-based conclusions
-- 🚫 Minimizing false positives
-
-The system should operate only on **lawfully obtained and authorized data**.
-
-Social-media processing is designed around user-provided exports rather than unrestricted live scraping.
-
-Any intelligence generated by DRISHT1 should be treated as:
-
-> **An analytical lead requiring appropriate human verification and lawful investigative procedures.**
-
----
-
-# 🎯 Objectives
-
-DRISHT1 aims to:
-
-- **Unify** fragmented digital intelligence
-- **Correlate** information across multiple data sources
-- **Resolve** entities across heterogeneous datasets
-- **Detect** statistical and ML-based anomalies
-- **Analyze** complex relationships
-- **Visualize** digital networks
-- **Prioritize** significant patterns
-- **Explain** anomalies using grounded LLM output
-- **Reduce** manual analysis of large datasets
-- **Maintain** a traceable and auditable analytical pipeline
+**Legend:**  
+✅ Available / Included in platform scope  
+⚙️ Architecture or implementation component under active development
 
 ---
 
 # 🗺️ Development Roadmap
 
-The architecture is planned as a **12-week implementation path**, with the option to compress it to approximately 4–6 weeks for a hackathon or extend it across a full semester.
+DRISHT1 is structured to evolve in stages, allowing the intelligence pipeline to mature without coupling every capability to the first release.
 
-| Phase | Weeks | Focus |
-|---|---:|---|
-| **0. Setup & Design** | 1 | Repository scaffolding, Django + DRF, Next.js, Supabase project, DB schema, review of CDR/fraud analytics tools |
-| **1. Ingestion Pipeline (CDR first)** | 2 | CDR CSV parser, Celery pipeline, Django models against Supabase Postgres, file uploads to Supabase Storage |
-| **2. Entity Graph MVP** | 2 | Deterministic entity resolution, relational graph queries, NetworkX analysis, basic graph visualization |
-| **3. Anomaly Engine — Tier 1** | 1 | Statistical/rule-based CDR detectors wired to the Anomaly model and API |
-| **4. Bank Statement + IPDR** | 2 | Extend parsers, anomaly detectors, and relationship analysis |
-| **5. Social Media Module** | 1 | Export-based ingestion, NER, sentiment, and entity linking |
-| **6. Tier 2 ML Detection** | 1 | Isolation Forest and graph algorithms across all sources |
-| **7. Qwen3.5-9B Fine-Tuning** | 1.5 | Dataset construction, LoRA/last-layer training, evaluation, vLLM serving |
-| **8. RAG + Insight API** | 1 | pgvector indexing in Supabase, retrieval pipeline, `/api/insights/`, `/api/case-chat/` |
-| **9. Frontend Polish** | 1.5 | Dashboard, timeline, graph interaction, alerts, case chat |
-| **10. Testing + Demo Prep** | 1.5 | End-to-end testing, architecture diagrams, report, demo using a synthetic realistic dataset |
+```mermaid
+timeline
+    title DRISHT1 Development Roadmap
 
-### Recommended Development Strategy
+    section Foundation
+        Data ingestion : Structured data processing
+        Normalization : Unified record formats
+        Entity layer : Cross-domain resolution
 
-The ordering matters.
+    section Intelligence
+        Graph analysis : Relationship exploration
+        Anomaly detection : Statistical & ML signals
+        Evidence model : Traceable anomaly objects
 
-A complete slice should work end-to-end before parallelizing across every source:
+    section AI
+        Explainable narratives : Grounded intelligence
+        RAG : Case-aware Q&A
+        Model adaptation : Structured-to-narrative learning
 
-```text
-One Data Source
-      ↓
-Ingestion
-      ↓
-Entity Resolution
-      ↓
-Visible Anomaly
-      ↓
-Evidence
-      ↓
-LLM Narrative
-      ↓
-Investigator UI
+    section Expansion
+        Advanced analytics : Additional intelligence signals
+        Investigation workflows : Enhanced case management
+        Platform scaling : Modular operational growth
 ```
 
-### Critical Path Risks
+---
 
-The two areas most likely to consume additional time are:
+# 🎯 Design Principles
 
-1. **Entity resolution**
-2. **Fine-tuning dataset construction**
+DRISHT1 is built around a set of principles intended to keep the intelligence workflow understandable, evidence-oriented, and reviewable.
 
-Fine-tuning examples should therefore be collected from the beginning of anomaly-engine development rather than waiting until the dedicated fine-tuning phase.
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🔎 Evidence First
+
+Analytical outputs should remain connected to the underlying records, triggers, and supporting signals.
+
+</td>
+
+<td width="50%" valign="top">
+
+### 🧠 Explainable Intelligence
+
+AI-generated narratives are designed to explain available analytical findings rather than invent unsupported conclusions.
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### 👤 Human Review
+
+The platform is intended to support investigators and analysts, with important conclusions remaining subject to human verification.
+
+</td>
+
+<td width="50%" valign="top">
+
+### 🔐 Controlled Access
+
+Sensitive intelligence workflows require authorization, role-aware access, and traceable activity where implemented.
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### 🧩 Modular Architecture
+
+Individual intelligence capabilities can evolve independently while remaining connected through a unified workflow.
+
+</td>
+
+<td width="50%" valign="top">
+
+### 📊 Cross-Domain Context
+
+The platform focuses on correlations between domains, helping reveal patterns that isolated datasets may not expose.
+
+</td>
+</tr>
+</table>
 
 ---
 
-# 🏆 What Will Actually Impress Evaluators
+# ❓ Frequently Asked Questions
 
-### 1. Cross-Source Entity Resolution
+### What is DRISHT1?
 
-Many projects can parse CSV files and show dashboards.
-
-DRISHT1's stronger differentiator is:
-
-> **Connecting three different digital domains to the same canonical entity with confidence scoring.**
+DRISHT1 is a digital intelligence and analytics platform designed to process and correlate authorized telecom, financial, and social-media datasets into a unified investigative view.
 
 ---
 
-### 2. Explainable Anomaly Detection
+### What makes DRISHT1 different from a standard analytics dashboard?
 
-A working, explainable Tier-1 anomaly detector is more useful in a demonstration than a black-box ML model that cannot clearly explain why it generated a result.
+The platform focuses on the connection between multiple intelligence domains through:
 
----
-
-### 3. Evidence-Grounded LLM
-
-A fine-tuned model that reliably produces grounded narratives is more useful than a larger model that occasionally invents facts.
-
-The evaluation should explicitly test:
-
-- Factual grounding
-- Evidence consistency
-- Narrative fluency
-- Absence of hallucinated facts
-
----
-
-### 4. Unified Analytical View
-
-The investigator should be able to move from:
-
-```text
-Entity
-  ↓
-Relationships
-  ↓
-Timeline
-  ↓
-Anomalies
-  ↓
-Evidence
-  ↓
-Explainable Insight
-```
-
-without manually switching between disconnected systems.
-
----
-
-# 🚀 Vision
-
-> **Transform fragmented digital footprints into connected, explainable intelligence.**
-
-DRISHT1 envisions a future where investigators can move from:
-
-```text
-Millions of Records
-        ↓
-Data Correlation
-        ↓
-Entity Resolution
-        ↓
-Meaningful Relationships
-        ↓
-Anomalies
-        ↓
-Evidence
-        ↓
-Explainable Intelligence
-```
-
-without manually examining every individual record.
-
----
-
-# 🏆 Built For
-
-**Chandigarh Police Hackathon**
-
-Developed as a collaborative team project focused on applying:
-
-**Artificial Intelligence × Data Analytics × Graph Intelligence × Responsible AI**
-
-to modern digital-investigation challenges.
-
----
-
-# 👥 Team
-
-**DRISHT1 Development Team**
-
-Building technology at the intersection of:
-
-**Artificial Intelligence × Data Analytics × Digital Intelligence × Law Enforcement**
-
----
-
-# 📌 Project Status
-
-🚧 **Currently under active development**
-
-The architecture, analytical models, data pipelines, fine-tuning strategy, and investigator interfaces are evolving throughout development.
-
-Current focus areas include:
-
-- Data ingestion
 - Entity resolution
-- Anomaly detection
-- Graph analytics
-- Risk scoring
-- Qwen fine-tuning
-- RAG
-- Supabase data layer
-- Investigator dashboard
-- Case management
-- Security and audit controls
+- Relationship analysis
+- Graph intelligence
+- Behavioral analytics
+- Evidence-based anomaly detection
+- Explainable AI
+
+The objective is to move from isolated records toward connected, evidence-backed intelligence.
 
 ---
 
-# ⭐ DRISHT1
+### Does the AI independently decide that something is suspicious?
 
-### *See the connections. Detect the anomalies. Explain the intelligence.*
+No.
+
+DRISHT1 separates anomaly detection from language generation.
+
+```text
+Analytics identifies signals
+            ↓
+Evidence supports the finding
+            ↓
+AI explains the available evidence
+            ↓
+Human reviews the result
+```
+
+The language model is not intended to independently create anomalies from raw records.
+
+---
+
+### How are entities connected across different datasets?
+
+The platform uses a layered approach involving:
+
+1. Deterministic identifier matching
+2. Probabilistic correlation
+3. Confidence scoring
+4. Evidence-backed relationship representation
+
+Connections can then be reviewed rather than silently assumed.
+
+---
+
+### Does DRISHT1 require a dedicated graph database?
+
+Not necessarily for the initial implementation.
+
+Relationship edges can be represented in the primary data layer and analyzed in memory using graph-processing techniques.
+
+The architecture can later evolve if larger-scale graph workloads require dedicated infrastructure.
+
+---
+
+### What type of social-media data does DRISHT1 analyze?
+
+The platform design focuses on **authorized or user-provided data exports** rather than unrestricted live scraping.
+
+Possible information includes:
+
+- Post content
+- Timestamps
+- Engagement information
+- Mentioned entities
+- Available geographic metadata
+
+---
+
+### What is the role of the language model?
+
+The language model supports:
+
+- Explaining analytical findings
+- Generating investigative narratives
+- Answering case-related questions with retrieved context
+- Creating readable summaries from structured evidence
+
+---
+
+### Is DRISHT1 designed to replace investigators?
+
+No.
+
+DRISHT1 is intended as an **investigator-support and analytical intelligence platform**.
+
+Human review remains an important part of interpreting evidence and making decisions.
+
+---
+
+# 📊 Project Status
+
+<div align="center">
+
+| Component | Status |
+|---|:---:|
+| Platform Architecture | 🟢 Designed |
+| Data Intelligence Layer | 🟢 In Progress |
+| Entity Resolution | 🟢 In Progress |
+| Relationship Intelligence | 🟢 In Progress |
+| Anomaly Detection | 🟢 In Progress |
+| Evidence Model | 🟢 Designed |
+| AI Intelligence Layer | 🟡 Experimental |
+| RAG & Case Q&A | 🟡 Experimental |
+| Model Adaptation | 🔵 Research Phase |
+
+</div>
+
+> DRISHT1 is an evolving project. Features and implementation details may change as the analytical architecture develops.
+
+---
+
+# 🤝 Contribution
+
+DRISHT1 is a project focused on building a structured and explainable digital intelligence workflow.
+
+Contributions, architectural suggestions, research discussions, and improvements are welcome where appropriate.
+
+Potential areas of contribution include:
+
+- Data normalization
+- Entity resolution
+- Graph algorithms
+- Statistical analytics
+- Machine learning
+- Explainable AI
+- Retrieval systems
+- Investigation workflows
+- User experience
+- Documentation
+
+---
+
+# 📞 Contact & Project Links
+
+<div align="center">
+
+### 🛡️ DRISHT1
+
+**Digital Risk & Intelligence System for Threat Investigation**
+
+<br>
+
+🌐 **Project Website**  
+<a href="#">Coming Soon</a>
+
+<br>
+
+🐙 **GitHub Organization**  
+<a href="https://github.com/">View Project Organization</a>
+
+<br>
+
+💼 **LinkedIn**  
+<a href="#">Project Updates</a>
+
+<br>
+
+📧 **Contact**  
+<a href="mailto:contact@example.com">contact@example.com</a>
+
+</div>
+
+---
+
+# 🧠 Acknowledgements
+
+DRISHT1 brings together concepts from multiple areas of computer science and data intelligence.
+
+The project architecture incorporates ideas from:
+
+- Graph Theory & Network Analysis
+- Statistical Anomaly Detection
+- Machine Learning
+- Entity Resolution
+- Natural Language Processing
+- Retrieval-Augmented Generation
+- Explainable AI
+- Digital Forensics
+- Data Engineering
+- Intelligence Analysis
+
+---
+
+# ⚖️ Responsible Use
+
+DRISHT1 is designed for analysis of **authorized, lawfully obtained, or user-provided data**.
+
+The platform should be used with appropriate consideration for:
+
+- Applicable laws and regulations
+- Data protection requirements
+- Authorization and access controls
+- Privacy considerations
+- Human oversight
+- Responsible interpretation of analytical results
+
+Analytical signals and AI-generated narratives should be treated as **decision-support information**, not as automatic proof or final conclusions.
+
+---
+
+# 📜 License
+
+Copyright © 2026 **DRISHT1**.
+
+All rights reserved.
+
+This project and its associated documentation, architecture, and implementation may be subject to the licensing terms defined by the project owners.
+
+Unauthorized copying, redistribution, or commercial use may be restricted according to the applicable license.
+
+---
+
+<div align="center">
+
+<img src="../images/logo.png" width="120" alt="DRISHT1 Logo">
+
+# 🛡️ DRISHT1
+
+### Digital Risk & Intelligence System for Threat Investigation
+
+**Connecting digital signals. Revealing hidden relationships. Supporting evidence-driven intelligence.**
+
+<br>
+
+> **From isolated records to connected intelligence.**
+
+<br>
+
+⭐ **If you find this project interesting, consider supporting it on GitHub.**
+
+<br>
+
+**Built with a focus on intelligence, explainability, and responsible AI.**
+
+</div>
