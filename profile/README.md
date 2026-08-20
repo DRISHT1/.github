@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="./images/logo.png" width="160" alt="DRISHT1 Logo"/>
+<img src="./images/drishti.jpeg" width="160" alt="DRISHT1 Logo"/>
 
 <h1>🛡️ DRISHT1</h1>
 
@@ -10,7 +10,7 @@
 
 <p>
 <strong>
-Connecting Telecom, Financial & Social Intelligence to uncover hidden patterns,
+Connecting Telecom, Financial &amp; Social Intelligence to uncover hidden patterns,
 detect anomalies, and generate explainable, actionable insights.
 </strong>
 </p>
@@ -40,6 +40,8 @@ detect anomalies, and generate explainable, actionable insights.
 </div>
 
 ---
+
+
 
 # Overview
 
